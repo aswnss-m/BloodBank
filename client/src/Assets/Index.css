@@ -16,6 +16,7 @@ body{
     margin : 0;
     padding: 0;
     min-height: 100vh;
+    min-width: 100vw;
     background-color: var(--primary-color);
 }
 .boldText{
@@ -26,4 +27,7 @@ body{
 }
 .whiteText {
     color: var(--white-color);
+}
+div{
+    outline: 2px solid yellow !important;
 }
