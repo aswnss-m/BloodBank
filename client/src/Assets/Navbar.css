@@ -6,10 +6,11 @@ a{
     background-color: var(--primary-color);
     display: flex;
     justify-content: space-between;
+    width: 100vw;
 }
 .navbar span{
     display: flex;
-    padding: 1rem;
+    padding: .5rem;
     align-items: center;
     gap: 1rem;
 }

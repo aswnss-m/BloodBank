@@ -5,7 +5,7 @@ import "../Assets/Navbar.css";
 function Navbar() {
   return (
     <div className="navbar">
-        <span className='navbarLogo'>
+        <span className='navbarLogo whiteText'>
             <h1>Blood Bank</h1>
         </span>
         <span className="navbarLinks">
