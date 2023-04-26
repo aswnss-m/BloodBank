@@ -1,14 +1,11 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
 import FloatingButton from '../Components/FloatingButton';
 import Emergency from '../Components/Emergency';
-
 import "../Assets/Home.css"
 
 function Home() {
   return (
     <div className="container">
-        <Navbar />
         <Emergency />
         <div className="homeContentContainer">
         <div className="homeContent">

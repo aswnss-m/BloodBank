@@ -1,0 +1,27 @@
+.formContainer{
+    display: grid;
+    place-content: center;
+
+}
+.requestForm{
+    width: 100vw;
+    max-width: 750px;
+    background-color: var(--white-color);
+    
+}
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+}
+.formGroup input{
+    border: none;
+    background-color: none;
+    border-bottom: 5px solid var(--dark-accent-color);
+    padding: 2px;
+}
+.formGroup input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 5px solid var(--light-accent-color);
+}

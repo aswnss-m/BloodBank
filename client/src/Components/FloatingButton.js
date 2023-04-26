@@ -1,12 +1,15 @@
 import React from 'react'
 import "../Assets/FloatingButton.css"
+import { Link } from 'react-router-dom'
 
 function FloatingButton() {
   return (
     <div className="floatingButtonContainer">
         <div className='requestBlood'>
-            <span className='boldText'>Request Blood</span>
-            <p>in need for blood ? Click here to search</p>
+            <Link to='/request_blood'>
+              <span className='boldText'>Request Blood</span>
+              <p>in need for blood ? Click here to search</p>
+            </Link>
         </div>
 
         <div className='registerBlood'>
