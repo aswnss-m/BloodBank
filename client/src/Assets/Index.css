@@ -6,7 +6,7 @@
 :root {
     --dark-accent-color : #D14D72;
     --light-accent-color : #FFABAB;
-    --primary-color : #FCC8D1;
+    --primary-color : #FEF2F4;
     --secondary-color : #0E0E0E;
     --green-color : #378C78;
     --yellow-color : #EBD405;
@@ -16,6 +16,7 @@ body{
     margin : 0;
     padding: 0;
     min-height: 100vh;
+    background-color: var(--primary-color);
 }
 .boldText{
     font-weight: bold;
