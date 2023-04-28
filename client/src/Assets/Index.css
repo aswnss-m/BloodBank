@@ -18,6 +18,7 @@ body{
     min-height: 100vh;
     min-width: 100vw;
     background-color: var(--primary-color);
+    /* overflow-x: hidden; */
 }
 .boldText{
     font-weight: bold;
@@ -28,6 +29,62 @@ body{
 .whiteText {
     color: var(--white-color);
 }
-div{
-    outline: 2px solid yellow !important;
+.primaryButton{
+    background-color:var(--dark-accent-color);
+    border:none;
+    padding:.5em 1em;
+    border-radius: .25em;
+    width: fit-content;
+    font-weight: bold;
+    color: var(--white-color);
+}
+.formContainer{
+    margin-top: 1em;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+.form{
+
+    width: min(750px,80vw);
+    width: 50vw;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    padding: 3em;
+    border-radius: .5em;
+    margin-top: 2em;
+    
+}
+.formGroup{
+    display: flex;
+    flex-direction: column;
+    /* padding:2em; */
+}
+.formGroup input,select{
+    border: none;
+    background-color: rgb(0, 0, 0,0);
+    color: rgb(0,0,0,0.8);
+    border-bottom: 5px solid var(--dark-accent-color);
+    padding: 2px;
+}
+.formGroup input:focus,select:focus{
+    border: none;
+    outline: none;
+    border-bottom: 5px solid var(--light-accent-color);
+    animation: changeColor .15s ease-in;
+}
+.formTitle{
+    margin-bottom: 2em;
+    align-self: center;
+}
+
+@keyframes changeColor {
+    0%{
+        border-color: var(--dark-accent-color);
+    }
+    100%{
+        border-color: var(--light-accent-color);
+    }
 }

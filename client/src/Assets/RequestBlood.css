@@ -1,44 +1,10 @@
-.formContainer{
-    margin-top: 1em;
-    display: grid;
-    place-items: center;
-    /* width: 100vw; */
 
+.searchButton{
+    align-self: center;
 }
-.requestForm{
-    /* width: 100vw; */
-    width: min(750px,80vw);
-    padding: 2rem;
-    background-color: var(--white-color);
+#otpField{
     display: flex;
-    flex-direction: column;
-    gap: 2.5em;
-    
-}
-.formGroup{
-    display: flex;
-    flex-direction: column;
-    /* padding: 0 2em; */
-}
-.formGroup input,select{
-    border: none;
-    background-color: var(--white-color);
-    color: rgb(0,0,0,0.8);
-    border-bottom: 5px solid var(--dark-accent-color);
-    padding: 2px;
-}
-.formGroup input:focus,select:focus{
-    border: none;
-    outline: none;
-    border-bottom: 5px solid var(--light-accent-color);
-    animation: changeColor .15s ease-in;
-}
-
-@keyframes changeColor {
-    0%{
-        border-color: var(--dark-accent-color);
-    }
-    100%{
-        border-color: var(--light-accent-color);
-    }
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:.2em;
 }

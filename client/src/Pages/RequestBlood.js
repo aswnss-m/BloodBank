@@ -4,8 +4,8 @@ import "../Assets/RequestBlood.css"
 function RequestBlood() {
   return (
     <div className="formContainer">
-        <h3>Request Blood</h3>
-        <form action="#" method="post" className='requestForm'>
+        <form action="#" method="post" className='form'>
+        <h3 className='formTitle' >Request Blood</h3>
             <div className="formGroup">
                 <label htmlFor="patientName">
                     Patient Name :
@@ -58,11 +58,15 @@ function RequestBlood() {
                 <input type="text" id='standeeNumber' inputMode='number'/>
             </div>
             <div className="formGroup">
+                <span id='otpField'>
                 <label htmlFor="otp">
                     Otp : 
                 </label>
+                <button className="primaryButton">Verify</button>
+                </span>
                 <input type="text" id='otp' />
             </div>
+            <input type="submit" className="primaryButton searchButton" value="Search" />
         </form>
     </div>
   )
