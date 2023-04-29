@@ -13,8 +13,10 @@ function FloatingButton() {
         </div>
 
         <div className='registerBlood'>
+            <Link to="/register">
             <span className='boldText'>Register as Donor</span>
             <p>Register yourself as a donor and donate blood</p>
+            </Link>
         </div>
 
         <div className='donateMoney'>

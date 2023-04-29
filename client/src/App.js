@@ -2,6 +2,8 @@ import Home from "./Pages/Home";
 import RequestBlood from "./Pages/RequestBlood";
 import { Route,Routes} from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import RegisterUser from "./Pages/RegisterUser";
+import EmergencyPage from "./Pages/EmergencyPage";
 function App() {
   return (
     <div className="app">
@@ -9,6 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/request_blood" element={<RequestBlood />} />
+        <Route path="/register" element={<RegisterUser />} />
+        <Route path="/emergency" element={<EmergencyPage />} />
       </Routes>
     </div>
   );

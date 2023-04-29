@@ -1,28 +1,28 @@
 import React from 'react'
-import "../Assets/RequestBlood.css"
+import "../Assets/RequestBlood.css" // For searchbutton css
 
 function RequestBlood() {
   return (
     <div className="formContainer">
         <form action="#" method="post" className='form'>
-        <h3 className='formTitle' >Request Blood</h3>
+        <h3 className='formTitle' >Register As Donor</h3>
             <div className="formGroup">
-                <label htmlFor="patientName">
-                    Patient Name :
+                <label htmlFor="userName">
+                    Name :
                 </label>
-                <input type="text" id='patientName' autoFocus/>
+                <input type="text" id='userName' autoFocus/>
             </div>
             <div className="formGroup">
-                <label htmlFor="patientAge">
+                <label htmlFor="userAge">
                     Age :
                 </label>
-                <input type="number" id='patientAge' inputMode='number'/>
+                <input type="number" id='userAge' inputMode='number'/>
             </div>
             <div className="formGroup">
-                <label htmlFor="patientBloodGroup">
+                <label htmlFor="userBloodGroup">
                     Blood Group :
                 </label>
-                <select name="bloodGroup" id="patientBloodGroup" defaultValue={'A+'}>
+                <select name="bloodGroup" id="userBloodGroup" defaultValue={'A+'}>
                     <option value="A+">A -ve</option>
                     <option value="A+">A +ve</option>
                     <option value="A+">AB +ve</option>
@@ -34,28 +34,28 @@ function RequestBlood() {
                 </select>
             </div>
             <div className="formGroup">
-                <label htmlFor="bloodUnits">
-                    No of Units :
+                <label htmlFor="userWeight">
+                    Weight
                 </label>
-                <input type="text" id='bloodUnits' />
+                <input type="number" inputMode='number' id='userWeight' placeholder='in kg' />
             </div>
             <div className="formGroup">
-                <label htmlFor="hospitalLocation">
-                    Hospital Location :
+                <label htmlFor="userLocation">
+                    Location :
                 </label>
-                <input type="text" id='hospitalLocation' />
+                <input type="text" id='userLocation' placeholder='District' />
             </div>
             <div className="formGroup">
-                <label htmlFor="standeeName">
-                    Standee Name :
+                <label htmlFor="userEmail">
+                    Email :
                 </label>
-                <input type="text" id='standeeName' />
+                <input type="email" id='userEmail' inputMode='email' />
             </div>
             <div className="formGroup">
-                <label htmlFor="standeeNumber">
-                    Standee Mobile Number :
+                <label htmlFor="userNumber" >
+                    Mobile Number :
                 </label>
-                <input type="text" id='standeeNumber' inputMode='number'/>
+                <input type="text" id='userNumber' inputMode='tel'/>
             </div>
             <div className="formGroup">
                 <span id='otpField'>
@@ -66,7 +66,7 @@ function RequestBlood() {
                 </span>
                 <input type="text" id='otp' />
             </div>
-            <input type="submit" className="primaryButton searchButton" value="Search" />
+            <input type="submit" className="primaryButton searchButton" value="Register" />
         </form>
     </div>
   )
