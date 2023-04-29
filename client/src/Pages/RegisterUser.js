@@ -1,7 +1,7 @@
 import React from 'react'
 import "../Assets/RequestBlood.css" // For searchbutton css
 
-function RequestBlood() {
+function RegisterUser() {
   return (
     <div className="formContainer">
         <form action="#" method="post" className='form'>
@@ -72,4 +72,4 @@ function RequestBlood() {
   )
 }
 
-export default RequestBlood
+export default RegisterUser 

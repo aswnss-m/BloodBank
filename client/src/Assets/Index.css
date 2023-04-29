@@ -34,7 +34,10 @@ body{
     font-weight: normal;
 }
 .whiteText {
-    color: var(--white-color);
+    color: var(--white-color) ;
+}
+.blackText{
+    color: var(--secondary-color);
 }
 .primaryButton{
     background-color:var(--dark-accent-color);

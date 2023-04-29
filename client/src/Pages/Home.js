@@ -11,9 +11,9 @@ function Home() {
         <div className="homeContent">
           <p>Donate blood, save life</p>
           <h2>Donate Blood And Inspire Others</h2>
-          <div className="exploreButton">
+          <button className="primaryButton blackText">
             Explore
-          </div>
+          </button>
         </div>
         </div>
         <FloatingButton />
