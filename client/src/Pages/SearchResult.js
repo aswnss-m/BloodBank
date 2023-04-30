@@ -7,17 +7,17 @@ function SearchResult() {
     <div className="searchResultsContainer">
       <p><span className='boldText'>Search Result /</span><span>Trivandrum - A+</span></p>
         <div className="searchResults">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
+            <Card phoneNumber={9446451902}/>
         </div>
     </div>
   )
