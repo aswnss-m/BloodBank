@@ -47,6 +47,23 @@ body{
     width: fit-content;
     font-weight: bold;
     color: var(--white-color);
+}.primaryButton-invert{
+    background-color:var(--light-accent-color);
+    border:none;
+    padding:.5em 1em;
+    border-radius: .25em;
+    width: fit-content;
+    font-weight: bold;
+    color: var(--black-color);
+}
+.primaryButton-light{
+    background-color:var(--white-color);
+    border:none;
+    padding:.5em 1em;
+    border-radius: .25em;
+    width: fit-content;
+    font-weight: bold;
+    color: var(--black-color);
 }
 .formContainer{
     margin-top: 1em;
