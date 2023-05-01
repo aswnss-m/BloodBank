@@ -15,7 +15,7 @@ function Navbar() {
         </span>
         <span className="navbarLinks">
             <a className='darkAccent' href='#'>Contact</a>
-            <a href='#'>Login</a>
+            <Link to='/login'>Login</Link>
         </span>
     </div>
   )

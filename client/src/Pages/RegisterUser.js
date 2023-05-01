@@ -1,7 +1,7 @@
 import React from 'react'
 import "../Assets/RequestBlood.css" // For searchbutton css
 
-function RegisterUser() {
+function RegisterUser({admin}) {
   return (
     <div className="formContainer">
         <form action="#" method="post" className='form'>
@@ -57,7 +57,7 @@ function RegisterUser() {
                 </label>
                 <input type="text" id='userNumber' inputMode='tel'/>
             </div>
-            <div className="formGroup">
+            {/* <div className="formGroup">
                 <span id='otpField'>
                 <label htmlFor="otp">
                     Otp : 
@@ -65,7 +65,7 @@ function RegisterUser() {
                 <button className="primaryButton">Verify</button>
                 </span>
                 <input type="text" id='otp' />
-            </div>
+            </div> */}
             <input type="submit" className="primaryButton searchButton" value="Register" />
         </form>
     </div>
