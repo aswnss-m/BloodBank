@@ -1,9 +1,13 @@
 const router = require('express').Router();
 let User = require('../models/user.model');
-const { v4: uuidv4 } = require('uuid');
+
+router.route('/').get((req, res) => {
+  User.find()
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
 
 router.route('/').post((req, res) => {
-    const id = uuidv4(); // Generate a unique ID using uuidv4()
   const name = req.body.name;
   const age = Number(req.body.age);
   const bloodGroup = req.body.bloodGroup;
@@ -11,7 +15,6 @@ router.route('/').post((req, res) => {
   const contactNumber = req.body.contactNumber;
 
   const newUser = new User({
-    id,
     name,
     age,
     bloodGroup,

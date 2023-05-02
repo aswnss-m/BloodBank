@@ -1,16 +1,15 @@
 const router = require('express').Router();
-let RequestBlood = require('../models/request.model');
+const RequestBlood = require('../models/request.model');
+const Donor = require('../models/user.model');
 
-router.route('/').post((req,res)=>{
-    const patientName = req.body.patientName;
-    const patientAge = Number(req.body.patientAge);
-    const patientBloodGroup = req.body.patientBloodGroup;
-    const patientBloodUnits = Number(req.body.patientBloodUnits);
-    const patientLocation = req.body.patientLocation;
-    const standeeName = req.body.standeeName;
-    const standeeNumber = req.body.standeeNumber;
+router.route('/').post((req, res) => {
+  const { patientName, patientAge, patientBloodGroup, patientBloodUnits, patientLocation, standeeName, standeeNumber } = req.body;
 
-    const newRequest = new RequestBlood({
+  // Find matching donors based on blood group and location
+  Donor.find({ bloodGroup: patientBloodGroup, location: patientLocation })
+    .then(matchingDonors => {
+      // Create a new request blood object
+      const newRequestBlood = new RequestBlood({
         patientName,
         patientAge,
         patientBloodGroup,
@@ -18,10 +17,17 @@ router.route('/').post((req,res)=>{
         patientLocation,
         standeeName,
         standeeNumber
-    });
+      });
 
-    newRequest.save()
-        .then(() => res.json('Request added!'))
-        .catch(err => res.status(400).json('Error: ' + err));
+      // Save the new request blood object to the database
+      return newRequestBlood.save();
+    })
+    .then(() => {
+      // Return the matching donors as JSON
+      return Donor.find({ bloodGroup: patientBloodGroup, location: patientLocation }).exec();
+    })
+    .then(matchingDonors => res.json(matchingDonors))
+    .catch(err => res.status(400).json('Error: ' + err));
 });
+
 module.exports = router;

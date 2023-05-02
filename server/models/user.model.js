@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 
 const donorSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    unique: true,
-    required: true
-  },
   name: {
     type: String,
     required: true

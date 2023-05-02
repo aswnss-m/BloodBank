@@ -25,7 +25,8 @@ const userRouter = require("./routes/user");
 const requestRouter = require("./routes/request");
 
 app.use("/register",userRouter);
-app.use("/search",requestRouter);
+app.use("/search",requestRouter,userRouter);
+
 
 app.listen(port,()=>{
     console.log(`Server is running at ${port}`);
