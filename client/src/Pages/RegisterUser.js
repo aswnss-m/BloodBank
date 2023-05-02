@@ -43,7 +43,7 @@ function RegisterUser() {
   }
   return (
     <div className="formContainer">
-      <form onSubmit={handleSubmit} className="form" action='/'>
+      <form onSubmit={handleSubmit} className="form">
         <h3 className="formTitle">Register As Donor</h3>
         <div className="formGroup">
           <label htmlFor="userName">Name :</label>

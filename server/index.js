@@ -25,6 +25,7 @@ const userRouter = require("./routes/user");
 const requestRouter = require("./routes/request");
 
 app.use("/register",userRouter);
+app.use("/all",userRouter);
 app.use("/search",requestRouter,userRouter);
 
 
