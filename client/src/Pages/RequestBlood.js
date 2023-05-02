@@ -78,15 +78,6 @@ function RequestBlood() {
                 </label>
                 <input type="text" id='standeeNumber' inputMode='number' onChange={(e)=>{SetStandeeNumber(e.target.value)}}/>
             </div>
-            {/* <div className="formGroup">
-                <span id='otpField'>
-                <label htmlFor="otp">
-                    Otp : 
-                </label>
-                <button className="primaryButton">Verify</button>
-                </span>
-                <input type="text" id='otp' />
-            </div> */}
             <button  className="primaryButton searchButton" onClick={handleClick}>Search</button>
         </div>
     </div>
