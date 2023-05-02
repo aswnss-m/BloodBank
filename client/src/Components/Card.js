@@ -1,25 +1,25 @@
 import React from 'react'
 import "../Assets/Card.css"
-function Card({phoneNumber}) {
+function Card(props) {
   const handleCallButtonClick = () => {
     if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
-      window.location.href = `tel:${phoneNumber}`;
+      window.location.href = `tel:${props.phoneNumber}`;
     } else {
-      navigator.clipboard.writeText(phoneNumber);
-      alert(`Phone number ${phoneNumber} copied to clipboard!`);
+      navigator.clipboard.writeText(props.phoneNumber);
+      alert(`Phone number ${props.phoneNumber} copied to clipboard!`);
     }
-    console.log(phoneNumber);
+    console.log(props.phoneNumber);
   };
   return (
     <>
     <div className="card">
         <div className="bloodGroup">
-            <p className='boldText'>A+</p>
+            <p className='boldText'>{props.bloodGroup}</p>
         </div>
         <div className="details">
-            <p className='boldText'>Aswin Lal M</p>
-            <p>21</p>
-            <p>Pappanamcode, Trivandrum</p>
+            <p className='boldText'> {props.name} </p>
+            <p>{props.age}</p>
+            <p> {props.location} </p>
             <button className="primaryButton-invert" onClick={handleCallButtonClick}>Contact</button>
         </div>
     </div>
