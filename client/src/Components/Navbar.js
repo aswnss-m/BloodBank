@@ -14,7 +14,7 @@ function Navbar() {
             </h1>
         </span>
         <span className="navbarLinks">
-            <a className='darkAccent' href='#'>Contact</a>
+            <Link className='darkAccent' to={'#'}>Contact</Link>
             <Link to='/login'>Login</Link>
         </span>
     </div>
