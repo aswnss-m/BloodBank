@@ -15,10 +15,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/request_blood" element={<RequestBlood />} />
+        <Route path="/search" element={<RequestBlood />} />
         <Route path="/register" element={<RegisterUser admin={0}/>} />
         <Route path="/emergency" element={<EmergencyPage />} />
-        <Route path="/search" element={<SearchResult />} />
+        <Route path="/search/:bloodgroup/:location" element={<SearchResult />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />

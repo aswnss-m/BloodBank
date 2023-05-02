@@ -6,7 +6,7 @@ function FloatingButton() {
   return (
     <div className="floatingButtonContainer">
         <div className='requestBlood'>
-            <Link to='/request_blood'>
+            <Link to='/search'>
               <span className='boldText'>Request Blood</span>
               <p>in need for blood ? Click here to search</p>
             </Link>
