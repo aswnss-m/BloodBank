@@ -8,7 +8,7 @@ import SearchResult from "./Pages/SearchResult";
 import Profile from "./Pages/Profile";
 import Login from "./Pages/Login";
 import Admin from "./Pages/Admin";
-import Footer from "./Components/Footer";
+// import Footer from "./Components/Footer";
 function App() {
   return (
     <div className="app">
@@ -23,7 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
