@@ -14,9 +14,12 @@
 .tableData{
     display: grid;
     width: 100%;
+    place-items: center;
+    /* gap :1em; */
 }
 .tableTitles{
     display: flex;
+    width: 100%;
     justify-content: center;
     gap:1em;
     border-top: 2px solid black; 
@@ -26,7 +29,15 @@
 .tableRow{
     display: flex;
     justify-content: center;
-    gap: 1em;
+    padding: .5em .25em;
+    /* gap: 1em; */
+    width: 30rem;
+    justify-content: space-between;
+    background-color: beige;
+    flex-wrap: wrap;
+}
+.tableRow:nth-of-type(even){
+    background-color: aqua;
 }
 .tableRowButton{
     display: flex;
@@ -38,4 +49,14 @@
 }
 .tableDeleteButton:hover{
     color: var(--dark-accent-color);
+}
+.tableRowBlood{
+    justify-self: center;
+    width: 2em;
+}
+.tableRowName{
+    width: 10em;
+}
+.tableRowProfile{
+    flex-basis: 100%;
 }
