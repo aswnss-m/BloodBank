@@ -11,35 +11,29 @@ function RegisterUser() {
   const [location, setLocation] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({
+    // post user data to server
+    axios.post('http://localhost:5000/register', {
       name,
       age,
       bloodGroup,
       weight,
       location,
       email,
-      number,
-    });
-  
-    // post user data to server
-    axios.post('http://localhost:5000/register', {
-  name,
-  age,
-  bloodGroup,
-  location,
-  contactNumber: number // the field in the model is called "contactNumber", so map "number" to "contactNumber"
-})
-  .then(response => {
-    console.log('Success:', response);
-    navigate('/');
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+      contactNumber: number, // the field in the model is called "contactNumber", so map "number" to "contactNumber"
+      password,
+    })
+      .then(response => {
+        console.log('Success:', response);
+        navigate('/');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   }
   return (
     <div className="formContainer">
@@ -48,6 +42,18 @@ function RegisterUser() {
         <div className="formGroup">
           <label htmlFor="userName">Name :</label>
           <input type="text" id="userName" autoFocus value={name} onChange={(e) => setName(e.target.value)} required/>
+        </div>
+        <div className="formGroup">
+          <label htmlFor="userEmail">Email :</label>
+          <input type="email" id="userEmail" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+        </div>
+        <div className="formGroup">
+          <label htmlFor="userNumber">Mobile Number :</label>
+          <input type="text" id="userNumber" inputMode="tel" value={number} onChange={(e) => setNumber(e.target.value)} required/>
+        </div>
+        <div className="formGroup">
+          <label htmlFor="userPassword">Password :</label>
+          <input type="password" id="userPassword" value={password} onChange={(e) => setPassword(e.target.value)} required/>
         </div>
         <div className="formGroup">
           <label htmlFor="userAge">Age :</label>
@@ -74,19 +80,11 @@ function RegisterUser() {
           <label htmlFor="userLocation">Location :</label>
           <input type="text" id="userLocation" placeholder="District" value={location} onChange={(e) => setLocation(e.target.value)} required/>
         </div>
-        <div className="formGroup">
-          <label htmlFor="userEmail">Email :</label>
-          <input type="email" id="userEmail" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-        </div>
-        <div className="formGroup">
-          <label htmlFor="userNumber">Mobile Number :</label>
-          <input type="text" id="userNumber" inputMode="tel" value={number} onChange={(e) => setNumber(e.target.value)} required/>
-        </div>
 
         <input type="submit" className="primaryButton searchButton" value="Register" />
       </form>
     </div>
-  )
+  );  
 }
 
 export default RegisterUser;

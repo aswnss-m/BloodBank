@@ -37,6 +37,6 @@ const RequestBloodSchema = new mongoose.Schema({
     timestamps:true,
   });
 
-const RequestBlood = mongoose.model('request', RequestBloodSchema);
+const RequestBlood = mongoose.model('Blood_Searches', RequestBloodSchema);
 
 module.exports = RequestBlood;
