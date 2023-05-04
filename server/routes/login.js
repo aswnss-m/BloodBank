@@ -3,7 +3,7 @@ const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
 
 router.route('/').get((req, res) => {
-  res.render('login');
+  res.json("Require POST");
 });
 
 router.route('/').post(async (req, res) => {
@@ -12,18 +12,21 @@ router.route('/').post(async (req, res) => {
 
   const user = await User.findOne({ email: email });
   if (!user) {
-    return res.status(400).json('Invalid email or password');
+    return res.status(400).json('Invalid email');
   }
 
   const validPassword = await bcrypt.compare(password, user.password);
   if (!validPassword) {
-    return res.status(400).json('Invalid email or password');
+    return res.status(400).json('Invalid password');
   }
-
-  // Save user information in session object
-  req.session.user = user;
-
-  res.redirect('/dashboard');
+  return res.status(200).json({ 
+    name: user.name, 
+    email: user.email,
+    bloodGroup: user.bloodGroup,
+    location: user.location,
+    weight:user.weight
+  });
+  
 });
 
 module.exports = router;
