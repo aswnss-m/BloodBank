@@ -16,6 +16,7 @@ router.route('/').post(async (req, res) => {
   const contactNumber = req.body.contactNumber;
   const email = req.body.email;
   const password = req.body.password;
+  const weight = req.body.weight;
 
   // Hash the password using bcrypt
   const salt = await bcrypt.genSalt(10);
@@ -27,6 +28,7 @@ router.route('/').post(async (req, res) => {
     bloodGroup,
     location,
     contactNumber,
+    weight,
     email,
     password: hashedPassword // Save the hashed password
   });
