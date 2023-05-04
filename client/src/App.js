@@ -9,7 +9,7 @@ import SearchResult from "./Pages/SearchResult";
 import Profile from "./Pages/Profile";
 import Login from "./Pages/Login";
 import AdminPage from "./Pages/AdminPage";
-import Error404 from "./Pages/Error404";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/admin" element={<AdminPage />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="*" element={<NotFoundPage />} />
         
       </Routes>
     </div>
