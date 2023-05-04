@@ -18,9 +18,9 @@ function Card(props) {
         </div>
         <div className="details">
             <p className='boldText'> {props.name} </p>
-            <p>{props.age}</p>
-            <p> {props.location} </p>
-            <button className="primaryButton-invert" onClick={handleCallButtonClick}>Contact</button>
+            <p>Age : {props.age}</p>
+            <p>location : {props.location} </p>
+            <button className="primaryButton-invert cardButton" onClick={handleCallButtonClick}>Contact</button>
         </div>
     </div>
     </>
