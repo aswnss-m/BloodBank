@@ -28,6 +28,10 @@ const donorSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  weight: {
+    type: String,
+    required :true
   }
 }, {
   timestamps: true
