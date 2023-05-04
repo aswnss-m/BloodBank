@@ -1,3 +1,6 @@
+#searchTable{
+    margin-right:10px;
+}
 .tableContainer{
     display: grid;
     width: 100%;

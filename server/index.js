@@ -24,11 +24,13 @@ connection.once('open',()=>{
 const userRouter = require("./routes/user");
 const requestRouter = require("./routes/request");
 const loginRouter = require("./routes/login");
+const adminRouter = require("./routes/adminroute");
 
 app.use("/register",userRouter);
 app.use("/all",userRouter);
 app.use("/search",requestRouter,userRouter);
 app.use("/login",loginRouter);
+app.use('/adminroute',adminRouter);
 
 
 app.listen(port,()=>{

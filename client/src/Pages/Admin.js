@@ -6,34 +6,71 @@ import RegisterUser from "./RegisterUser";
 
 function Admin() {
   const [userData , setUserData] = useState([]);
+  const [requestData , setRequestData] = useState([]);
+  const [tableData, setTableData] = useState([]);
   const [showProfileIndex, setShowProfileIndex] = useState(-1);
+  const [showSearch, setShowSearch] = useState(0);
+  const [register, setRegister] = useState(0);
+  const [searchValue, setSearchValue] = useState("");
+  const [request,setRequest] = useState(false);
+  const [showAll,setShowAll] = useState(false);
+  const [searchTable, setSearchTable] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/all`);
-        setUserData(response.data);
+        const userResponse = await axios.get(`http://localhost:5000/adminroute/user`);
+        setUserData(userResponse.data);
       } catch (error) {
+        console.error(error);
+      }
+      try{
+        const requestResponse = await axios.get(`http://localhost:5000/adminroute/request`);
+        setRequestData(requestResponse.data);
+      }catch(error){
         console.error(error);
       }
     };
     fetchData();
-  }, []);
+  },[]);
 
-  const [showSearch, setShowSearch] = useState(0);
-  const [register, setRegister] = useState(0);
-  const [searchValue, setSearchValue] = useState("");
+  useEffect(() => {
+    let data = [];
+    if(!request && !showAll){
+      data = userData.map(({ name, bloodGroup, _id }) => ({ name, bloodGroup, _id }));
+    }else if(request && !showAll){
+      data = requestData.map(({ patientName: name, bloodGroup, _id }) => ({ name, bloodGroup, _id }));
+    }else{
+      data = userData.concat(requestData.map(({ patientName : name , patientBloodGroup : bloodGroup, _id }) => ({ name, bloodGroup, _id })));
+    }
+    if (searchValue) {
+      const filteredData = data.filter(({bloodGroup}) => bloodGroup === searchValue);
+      setSearchTable(filteredData);
+      setTableData(filteredData);
+    } else {
+      setSearchTable([]);
+      setTableData(data);
+    }
+  }, [userData, requestData, request, showAll, searchValue]);
 
   const handleSearch = () => {
-    console.log(searchValue); // need to change this so that it searches and shows only 
+    if (searchValue) {
+      const filteredData = tableData.filter(({bloodGroup}) => bloodGroup === searchValue);
+      setSearchTable(filteredData);
+      setTableData(filteredData);
+    } else {
+      setSearchTable([]);
+      setTableData(tableData);
+    }
   };
-
+  
   return (
     <div className='Admin'>
       {/* UPdate the navbar such that when the url has /Admin the login and cotact button should be hidden */}
       <div className="tableContainer">
         <div className="tableHeading">
-          <button className='primaryButton-invert'>All</button>
+          <button className='primaryButton-invert' onClick={()=>{setShowAll(!showAll)}}>{showAll ? 'Not All': 'All'}</button>
+          <button className='primaryButton-invert' onClick={()=>{setRequest(!request)}}>{request?'Users':'Requests'}</button>
           <span>
             {showSearch >= 1 && (
               <input
@@ -74,16 +111,16 @@ function Admin() {
             <span>Blood</span>
             <span>Actions</span>
           </div>
-          {userData.map((user, index) => (
+          {tableData.map((data, index) => (
             <div className="tableRow" key={index}>
-              <p className="tableRowId">{user._id.slice(9, 15)}</p>
-              <p className="tableRowName">{user.name}</p>
-              <p className="tableRowBlood">{user.bloodGroup}</p>
+              <p className="tableRowId">{data._id.slice(9, 15)}</p>
+              <p className="tableRowName">{data.name}</p>
+              <p className="tableRowBlood">{data.bloodGroup}</p>
               <div className="tableRowButton">
                 <span
                   className='tableViewButton'
                   onClick={() => {
-                    if(showProfileIndex == index){
+                    if(showProfileIndex === index){
                         setShowProfileIndex(-1);
                     }
                     else {
@@ -97,8 +134,8 @@ function Admin() {
               </div>
               {showProfileIndex === index && (
                 <div className="tableRowProfile">
-                  {/* <p className="tableProfileMail">{user.email}</p> */}
-                  <p className="tableProfileNumber">{user.contactNumber}</p>
+                  {/* <p className="tableProfileMail">{data.email}</p> */}
+                  <p className="tableProfileNumber">{data.contactNumber}</p>
                 </div>
               )}
             </div>
