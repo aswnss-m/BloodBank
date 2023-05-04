@@ -19,13 +19,13 @@ function Admin() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userResponse = await axios.get(`http://localhost:5000/adminroute/user`);
+        const userResponse = await axios.get(`https://blood-bank-4lln.vercel.app/adminroute/user`);
         setUserData(userResponse.data);
       } catch (error) {
         console.error(error);
       }
       try{
-        const requestResponse = await axios.get(`http://localhost:5000/adminroute/request`);
+        const requestResponse = await axios.get(`https://blood-bank-4lln.vercel.app/adminroute/request`);
         setRequestData(requestResponse.data);
       }catch(error){
         console.error(error);
@@ -66,7 +66,7 @@ function Admin() {
   const handleDelete = async (id) => {
     if (!request){
       try {
-        await axios.delete(`http://localhost:5000/adminroute/user/${id}`);
+        await axios.delete(`https://blood-bank-4lln.vercel.app/adminroute/user/${id}`);
         // Remove the deleted user from userData state
         setUserData(userData.filter(user => user._id !== id));
       } catch (error) {
@@ -74,7 +74,7 @@ function Admin() {
       }
     } else{
       try {
-        await axios.delete(`http://localhost:5000/adminroute/request/${id}`);
+        await axios.delete(`https://blood-bank-4lln.vercel.app/adminroute/request/${id}`);
         // Remove the deleted user from userData state
         setRequestData(requestData.filter(user => user._id !== id));
       } catch (error) {
