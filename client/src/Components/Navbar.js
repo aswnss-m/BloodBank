@@ -26,7 +26,7 @@ let links;
         </h1>
       </span>
       <span className="navbarLinks">
-        <Link className="darkAccent" to="#">
+        <Link className="darkAccent" to="/Contact">
           Contact
         </Link>
         {links}

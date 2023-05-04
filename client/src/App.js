@@ -9,6 +9,8 @@ import SearchResult from "./Pages/SearchResult";
 import Profile from "./Pages/Profile";
 import Login from "./Pages/Login";
 import AdminPage from "./Pages/AdminPage";
+import Error404 from "./Pages/Error404";
+
 
 function App() {
   const [islogged, setIslogged] = useState(localStorage.getItem("isAuth"));
@@ -35,6 +37,8 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="*" element={<Error404 />} />
+        
       </Routes>
     </div>
   );

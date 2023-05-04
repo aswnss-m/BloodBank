@@ -20,7 +20,7 @@ function FloatingButton() {
         </div>
 
         <div className='donateMoney'>
-            <span className="boldText">Donate</span>
+            <span className="boldText"><Link to={'/donate'}>Donate</Link></span>
             <p>$</p>
         </div>
     </div>

@@ -24,7 +24,8 @@ router.route('/').post(async (req, res) => {
     email: user.email,
     bloodGroup: user.bloodGroup,
     location: user.location,
-    weight:user.weight
+    weight:user.weight,
+    age:user.age
   });
   
 });

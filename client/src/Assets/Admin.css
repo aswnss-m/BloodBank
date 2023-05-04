@@ -36,11 +36,11 @@
     /* gap: 1em; */
     width: 30rem;
     justify-content: space-between;
-    background-color: beige;
+    background-color: rgb(249, 249, 249);
     flex-wrap: wrap;
 }
 .tableRow:nth-of-type(even){
-    background-color: aqua;
+    background-color: rgb(237, 237, 237);
 }
 .tableRowButton{
     display: flex;
