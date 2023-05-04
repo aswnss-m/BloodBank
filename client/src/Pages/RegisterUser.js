@@ -16,6 +16,16 @@ function RegisterUser() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log({
+      name,
+      age,
+      bloodGroup,
+      weight,
+      location,
+      email,
+      contactNumber: number, // the field in the model is called "contactNumber", so map "number" to "contactNumber"
+      password,
+    })
     // post user data to server
     axios.post('http://localhost:5000/register', {
       name,
@@ -48,12 +58,12 @@ function RegisterUser() {
           <input type="email" id="userEmail" inputMode="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
         </div>
         <div className="formGroup">
-          <label htmlFor="userNumber">Mobile Number :</label>
-          <input type="text" id="userNumber" inputMode="tel" value={number} onChange={(e) => setNumber(e.target.value)} required/>
-        </div>
-        <div className="formGroup">
           <label htmlFor="userPassword">Password :</label>
           <input type="password" id="userPassword" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+        </div>
+        <div className="formGroup">
+          <label htmlFor="userNumber">Mobile Number :</label>
+          <input type="text" id="userNumber" inputMode="tel" value={number} onChange={(e) => setNumber(e.target.value)} required/>
         </div>
         <div className="formGroup">
           <label htmlFor="userAge">Age :</label>
