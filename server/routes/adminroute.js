@@ -10,5 +10,16 @@ router.route('/user').get((req, res) => {
 router.route('/request').get((req, res) => {
   request.find().then(requests => res.json(requests)).catch(err => res.status(400).json('Error ' + err));
 });
+router.route('/user/:id').delete((req, res) => {
+  user.findByIdAndDelete(req.params.id)
+    .then(() => res.json('User deleted.'))
+    .catch(err => res.status(400).json('Error ' + err));
+});
+
+router.route('/request/:id').delete((req, res) => {
+  request.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Request deleted.'))
+    .catch(err => res.status(400).json('Error ' + err));
+});
 
 module.exports = router;

@@ -1,16 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import '../Assets/Navbar.css';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "../Assets/Navbar.css";
+import { Link } from "react-router-dom";
 
-function Navbar({ onLogout }) {
-  const [islogged, setIslogged] = useState(localStorage.getItem('isAuth'));
+function Navbar({ onLogout, islogged }){
+let links;
+  if (islogged === "true") {
+    links = (
+      <>
+        <Link to="/profile">Profile</Link>
+        <Link to="/" onClick={onLogout}>Logout</Link>
+      </>
+    );
+  } else {
+    links = <Link to="/login">Login</Link>;
+  }
 
-  const localStorageItem = localStorage.getItem('isAuth');
-
-  useEffect(() => {
-    setIslogged(localStorageItem);
-  }, [localStorageItem]);
-
+  console.log(islogged);
   return (
     <div className="navbar">
       <span className="navbarLogo whiteText">
@@ -21,19 +26,10 @@ function Navbar({ onLogout }) {
         </h1>
       </span>
       <span className="navbarLinks">
-        <Link className="darkAccent" to={'#'}>
+        <Link className="darkAccent" to="#">
           Contact
         </Link>
-        {islogged ? (
-          <Link to={'/'} onClick={() => {
-            setIslogged(false);
-            onLogout(false);
-            }}>
-            Logout
-          </Link>
-        ) : (
-          <Link to="/login">Login</Link>
-        )}
+        {links}
       </span>
     </div>
   );

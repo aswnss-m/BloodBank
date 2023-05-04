@@ -63,6 +63,25 @@ function Admin() {
       setTableData(tableData);
     }
   };
+  const handleDelete = async (id) => {
+    if (!request){
+      try {
+        await axios.delete(`http://localhost:5000/adminroute/user/${id}`);
+        // Remove the deleted user from userData state
+        setUserData(userData.filter(user => user._id !== id));
+      } catch (error) {
+        console.error(error);
+      }
+    } else{
+      try {
+        await axios.delete(`http://localhost:5000/adminroute/request/${id}`);
+        // Remove the deleted user from userData state
+        setRequestData(requestData.filter(user => user._id !== id));
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
   
   return (
     <div className='Admin'>
@@ -130,7 +149,7 @@ function Admin() {
                 >
                   View
                 </span>
-                <span className='tableDeleteButton'>Delete</span>
+                <span className='tableDeleteButton' onClick={() => handleDelete(data._id)}>Delete</span>
               </div>
               {showProfileIndex === index && (
                 <div className="tableRowProfile">

@@ -1,7 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('isAuth'));
   const userData = JSON.parse(localStorage.getItem('userData'));
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setIsAuth(localStorage.getItem('isAuth'));
+  }, []);
+
+  useEffect(() => {
+    if (!isAuth) {
+      navigate('/login');
+    }
+  }, [isAuth, navigate]);
 
   return (
     <div className='profileContainer'>
@@ -20,4 +33,4 @@ function Profile() {
   )
 }
 
-export default Profile
+export default Profile;

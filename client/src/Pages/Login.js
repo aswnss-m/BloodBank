@@ -19,7 +19,7 @@
       })
         .then(response => {
           console.log('Success:', response);
-          localStorage.setItem('isAuth',true);
+          localStorage.setItem('isAuth',"true");
           localStorage.setItem('userData', JSON.stringify(response.data)); // set the user data in localStorage
           onLogin(true);
           navigate('/profile');
