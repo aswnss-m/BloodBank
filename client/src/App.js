@@ -14,6 +14,8 @@ import Donate from "./Pages/Donate";
 
 
 function App() {
+  localStorage.setItem("isAdmin", "false");
+  localStorage.setItem("isAuth", "false");
   const [islogged, setIslogged] = useState(localStorage.getItem("isAuth"));
 
   const handleLogin = () => {
