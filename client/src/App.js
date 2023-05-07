@@ -10,6 +10,7 @@ import Profile from "./Pages/Profile";
 import Login from "./Pages/Login";
 import AdminPage from "./Pages/AdminPage";
 import NotFoundPage from "./Pages/NotFoundPage";
+import Donate from "./Pages/Donate";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/donate" element={<Donate />} />
         <Route path="*" element={<NotFoundPage />} />
         
       </Routes>

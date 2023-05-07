@@ -8,7 +8,6 @@ function SearchResult(props) {
   const [userData, setUserData] = useState([]);
   const { bloodgroup, location } = useParams();
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,9 +27,20 @@ function SearchResult(props) {
     <div className="searchResultsContainer">
       <p><span className='boldText'>Search Result /</span><span>{location} - {bloodgroup}</span></p>
       <div className="searchResults">
-        {userData.map((user, index) => (
-            <Card key={index} name={user.name} phoneNumber={user.contactNumber} age={user.age} bloodGroup = {user.bloodGroup} location = {user.location} />
-         ))}
+        {userData.length === 0 ? (
+          <p>No results</p>
+        ) : (
+          userData.map((user, index) => (
+            <Card
+              key={index}
+              name={user.name}
+              phoneNumber={user.contactNumber}
+              age={user.age}
+              bloodGroup={user.bloodGroup}
+              location={user.location}
+            />
+          ))
+        )}
       </div>
     </div>
   )
