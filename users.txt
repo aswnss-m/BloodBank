@@ -1,0 +1,182 @@
+
+values= [
+  {
+    "name": "John Doe",
+    "age": 25,
+    "bloodGroup": "A+",
+    "weight": 70,
+    "location": "New York",
+    "email": "johndoe@gmail.com",
+    "number": "1234567890",
+    "password": "mypassword123"
+  },
+  {
+    "name": "Jane Smith",
+    "age": 30,
+    "bloodGroup": "B+",
+    "weight": 65,
+    "location": "Los Angeles",
+    "email": "janesmith@gmail.com",
+    "number": "0987654321",
+    "password": "mypassword456"
+  },
+  {
+    "name": "David Lee",
+    "age": 35,
+    "bloodGroup": "O+",
+    "weight": 80,
+    "location": "San Francisco",
+    "email": "davidlee@gmail.com",
+    "number": "9876543210",
+    "password": "mypassword789"
+  },
+  {
+    "name": "Sarah Johnson",
+    "age": 28,
+    "bloodGroup": "AB+",
+    "weight": 60,
+    "location": "Chicago",
+    "email": "sarahjohnson@gmail.com",
+    "number": "0123456789",
+    "password": "mypassword101"
+  },
+  {
+    "name": "Michael Brown",
+    "age": 40,
+    "bloodGroup": "A-",
+    "weight": 75,
+    "location": "Boston",
+    "email": "michaelbrown@gmail.com",
+    "number": "1234509876",
+    "password": "mypassword112"
+  },
+  {
+    "name": "Emily Davis",
+    "age": 22,
+    "bloodGroup": "B-",
+    "weight": 55,
+    "location": "Seattle",
+    "email": "emilydavis@gmail.com",
+    "number": "6789054321",
+    "password": "mypassword1234"
+  },
+  {
+    "name": "Christopher Green",
+    "age": 33,
+    "bloodGroup": "O-",
+    "weight": 90,
+    "location": "Houston",
+    "email": "christophergreen@gmail.com",
+    "number": "9876501234",
+    "password": "mypassword567"
+  },
+  {
+    "name": "Rachel White",
+    "age": 27,
+    "bloodGroup": "A+",
+    "weight": 68,
+    "location": "Miami",
+    "email": "rachelwhite@gmail.com",
+    "number": "4567890123",
+    "password": "mypassword890"
+  },
+  {
+    "name": "Jason Kim",
+    "age": 31,
+    "bloodGroup": "AB+",
+    "weight": 72,
+    "location": "Dallas",
+    "email": "jasonkim@gmail.com",
+    "number": "7890123456",
+    "password": "mypassword113"
+  },
+  {
+    "name": "Ashley Lee",
+    "age": 29,
+    "bloodGroup": "B+",
+    "weight": 62,
+    "location": "Atlanta",
+    "email": "ashleylee@gmail.com",
+    "number": "2345678901",
+    "password": "mypassword224"
+  },
+  {
+    "name": "Mark Johnson",
+    "age": 32,
+    "bloodGroup": "A+",
+    "weight": 78,
+    "location": "New York",
+    "email": "markjohnson@gmail.com",
+    "number": "0987654321",
+    "password": "password123"
+  },
+  {
+    "name": "Jessica Rodriguez",
+    "age": 27,
+    "bloodGroup": "B+",
+    "weight": 60,
+    "location": "Los Angeles",
+    "email": "jessicarodriguez@gmail.com",
+    "number": "1234567890",
+    "password": "password456"
+  },
+  {
+    "name": "Brian Davis",
+    "age": 45,
+    "bloodGroup": "O+",
+    "weight": 85,
+    "location": "San Francisco",
+    "email": "briandavis@gmail.com",
+    "number": "2345678901",
+    "password": "password789"
+  },
+  {
+    "name": "Stephanie White",
+    "age": 29,
+    "bloodGroup": "AB+",
+    "weight": 65,
+    "location": "Chicago",
+    "email": "stephaniewhite@gmail.com",
+    "number": "6789054321",
+    "password": "password101"
+  },
+  {
+    "name": "James Kim",
+    "age": 38,
+    "bloodGroup": "A-",
+    "weight": 73,
+    "location": "Boston",
+    "email": "jameskim@gmail.com",
+    "number": "4567890123",
+    "password": "password112"
+  },
+  {
+    "name": "Elizabeth Brown",
+    "age": 24,
+    "bloodGroup": "B-",
+    "weight": 57,
+    "location": "Seattle",
+    "email": "elizabethbrown@gmail.com",
+    "number": "7890123456",
+    "password": "password1234"
+  },
+  {
+    "name": "Thomas Green",
+    "age": 36,
+    "bloodGroup": "O-",
+    "weight": 92,
+    "location": "Houston",
+    "email": "thomasgreen@gmail.com",
+    "number": "1234509876",
+    "password": "password567"
+  },
+  {
+    "name": "Megan Lee",
+    "age": 31,
+    "bloodGroup": "A+",
+    "weight": 70,
+    "location": "Miami",
+    "email": "meganlee@gmail.com",
+    "number": "9876543210",
+    "password": "password890"
+  }]
