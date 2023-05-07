@@ -41,7 +41,7 @@ def generate_phone_number():
     formatted_number = f'{number[:3]}-{number[3:6]}-{number[6:]}'
     return formatted_number
 
-for name in names[:1]:
+for name in names[1:]:
     driver.get('http://localhost:3000/register')
     # fill in the form fields
     name_input = driver.find_element(By.ID,'userName')

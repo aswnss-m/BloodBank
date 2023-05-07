@@ -37,7 +37,14 @@ function Admin() {
   useEffect(() => {
     let data = [];
     if(!request && !showAll){
-      data = userData.map(({ name, bloodGroup, _id }) => ({ name, bloodGroup, _id }));
+       data = userData.map(({ name, bloodGroup, _id, email, contactNumber,location}) => ({
+        name,
+        bloodGroup,
+        _id,
+        email,
+        contactNumber,
+        location
+      }));
     }else if(request && !showAll){
       data = requestData.map(({ patientName: name, bloodGroup, _id }) => ({ name, bloodGroup, _id }));
     }else{
@@ -153,8 +160,9 @@ function Admin() {
               </div>
               {showProfileIndex === index && (
                 <div className="tableRowProfile">
-                  {/* <p className="tableProfileMail">{data.email}</p> */}
                   <p className="tableProfileNumber">{data.contactNumber}</p>
+                  <p className="tableProfileEmail">{data.email}</p>
+                  <p className="tableProfileLocation">{data.location}</p>
                 </div>
               )}
             </div>

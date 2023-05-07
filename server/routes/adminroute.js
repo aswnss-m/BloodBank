@@ -4,7 +4,11 @@ const request = require('../models/request.model');
 const bcrypt = require('bcrypt')
 
 router.route('/user').get((req, res) => {
-  user.find().then(users => res.json(users)).catch(err => res.status(400).json('Error ' + err));
+  user
+    .find()
+    .select('-__v -updatedAt -password') // Exclude __v, updatedAt, and password fields
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json('Error ' + err));
 });
 
 router.route('/request').get((req, res) => {
