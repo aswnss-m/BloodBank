@@ -87,7 +87,7 @@ Note: Make sure to have Node.js and npm installed on your machine before followi
 2. Connecting to backend
    the Axios library is used to make HTTP requests to the backend server. Axios is a popular library for making HTTP requests from the browser or Node.js, and it simplifies the process of sending asynchronous HTTP requests to a web server.
 
-   The useEffect hook is used to fetch data from the backend server based on the URL parameters bloodgroup and location. When the component mounts, useEffect will run the callback function, which sends a GET request to the backend server at https://blood-bank-4lln.vercel.app/all. The response data is filtered based on the bloodgroup and location URL parameters, and the resulting data is set using the setUserData function from useState.
+   The useEffect hook is used to fetch data from the backend server based on the URL parameters bloodgroup and location. When the component mounts, useEffect will run the callback function, which sends a GET request to the backend server at http://localhost:5000/all. The response data is filtered based on the bloodgroup and location URL parameters, and the resulting data is set using the setUserData function from useState.
 
    The fetched data is then rendered in the div with class name searchResults using the map function, which iterates over the userData array and returns a Card component for each element in the array.
 
@@ -104,7 +104,7 @@ Note: Make sure to have Node.js and npm installed on your machine before followi
    2. Using axios to make a GET request to the backend:
 
    ```
-   const response = await axios.get(`https://blood-bank-4lln.vercel.app/all`);
+   const response = await axios.get(`http://localhost:5000/all`);
    ```
 
    3. Filtering the response data based on the blood group and location:
@@ -119,7 +119,7 @@ Note: Make sure to have Node.js and npm installed on your machine before followi
    setUserData(data);
    ```
 
-   In summary, axios is a popular library for making HTTP requests from the client-side of a web application. In this file, axios is used to make a GET request to the backend API at the `https://blood-bank-4lln.vercel.app/all` endpoint, which returns a list of all the registered blood donors. The response data is then filtered based on the blood group and location parameters received through the URL, and the filtered data is set to the state variable `userData`. This state variable is then used to render a list of blood donors matching the search criteria on the UI.
+   In summary, axios is a popular library for making HTTP requests from the client-side of a web application. In this file, axios is used to make a GET request to the backend API at the `http://localhost:5000/all` endpoint, which returns a list of all the registered blood donors. The response data is then filtered based on the blood group and location parameters received through the URL, and the filtered data is set to the state variable `userData`. This state variable is then used to render a list of blood donors matching the search criteria on the UI.
 
 
    3. Backend

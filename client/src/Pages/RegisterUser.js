@@ -27,7 +27,7 @@ function RegisterUser() {
       password,
     })
     // post user data to server
-    axios.post('https://blood-bank-4lln.vercel.app/register', {
+    axios.post('http://localhost:5000/register', {
       name,
       age,
       bloodGroup,

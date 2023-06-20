@@ -11,7 +11,7 @@ function SearchResult(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://blood-bank-4lln.vercel.app/all`);
+        const response = await axios.get(`http://localhost:5000/all`);
         console.log(response);
         const data = response.data.filter(user => user.bloodGroup === bloodgroup && user.location === location);
         setUserData(data);
